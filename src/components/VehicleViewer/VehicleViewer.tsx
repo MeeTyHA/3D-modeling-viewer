@@ -9,13 +9,14 @@ import React, {
   Suspense,
 } from "react";
 import { Canvas, useThree } from "@react-three/fiber";
-import { OrbitControls, Environment, useGLTF, useProgress } from "@react-three/drei";
+import { OrbitControls, useGLTF, useProgress } from "@react-three/drei";
 import type { OrbitControls as OrbitControlsImpl } from "three-stdlib";
 import * as THREE from "three";
 import { motion, AnimatePresence } from "framer-motion";
 import type { Vehicle, Hotspot } from "@/types";
 import Hotspots from "@/components/Hotspots/Hotspots";
 import LoadingSpinner from "@/components/LoadingSpinner";
+import VehicleSceneLighting from "@/components/VehicleSceneLighting";
 import { useAppStore } from "@/store/useAppStore";
 import { initGLTFLoader, preloadGLB } from "@/hooks/useGLBLoader";
 import {
@@ -100,7 +101,6 @@ interface SceneProps {
   interactive: boolean;
   controlsRef: React.RefObject<OrbitControlsImpl | null>;
   onModelReady: () => void;
-  showEnvironment: boolean;
 }
 
 function SceneContent({
@@ -110,7 +110,6 @@ function SceneContent({
   interactive,
   controlsRef,
   onModelReady,
-  showEnvironment,
 }: SceneProps) {
   const [hotspots, setHotspots] = useState<Hotspot[]>([]);
 
@@ -122,11 +121,7 @@ function SceneContent({
   return (
     <>
       <CameraController position={vehicle.cameraPosition} />
-      <ambientLight intensity={0.65} />
-      <directionalLight position={[10, 10, 5]} intensity={1.2} castShadow />
-      <directionalLight position={[-5, 5, -5]} intensity={0.45} />
-      <hemisphereLight args={["#ffffff", "#444444", 0.55]} />
-      {showEnvironment && <Environment preset="city" background={false} />}
+      <VehicleSceneLighting />
       <VehicleModel
         modelUrl={vehicle.glbPath}
         rotation={vehicle.modelRotation}
@@ -165,7 +160,6 @@ function VehicleViewerContent({
 }: VehicleViewerProps) {
   const { progress } = useProgress();
   const [modelReady, setModelReady] = useState(false);
-  const [showEnvironment, setShowEnvironment] = useState(false);
 
   const setLoadingProgress = useAppStore((s) => s.setLoadingProgress);
   const setIsModelLoaded = useAppStore((s) => s.setIsModelLoaded);
@@ -179,7 +173,6 @@ function VehicleViewerContent({
   const handleModelReady = useMemo(
     () => () => {
       setModelReady(true);
-      setShowEnvironment(true);
     },
     []
   );
@@ -287,7 +280,6 @@ function VehicleViewerContent({
               interactive={interactive}
               controlsRef={controlsRef}
               onModelReady={handleModelReady}
-              showEnvironment={showEnvironment}
             />
           </Suspense>
         </Canvas>

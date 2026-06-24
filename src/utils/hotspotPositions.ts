@@ -45,6 +45,16 @@ export function snapToMeshSurface(
   relative: [number, number, number],
   surfaceOffset = SURFACE_OFFSET
 ): THREE.Vector3 {
+  return snapToMeshSurfaceWithMeshes(scene, relative, getMeshes(scene), surfaceOffset);
+}
+
+/** Same as snapToMeshSurface but reuses a pre-collected mesh list (faster in editors). */
+export function snapToMeshSurfaceWithMeshes(
+  scene: THREE.Object3D,
+  relative: [number, number, number],
+  meshes: THREE.Mesh[],
+  surfaceOffset = SURFACE_OFFSET
+): THREE.Vector3 {
   scene.updateMatrixWorld(true);
 
   const box = new THREE.Box3().setFromObject(scene);
@@ -53,10 +63,8 @@ export function snapToMeshSurface(
   const maxDim = Math.max(size.x, size.y, size.z, 0.001);
   const shell = bboxPoint(box, relative);
 
-  const meshes = getMeshes(scene);
   if (meshes.length === 0) return shell;
 
-  // Direction from model center through the target region
   const outward = shell.clone().sub(center);
   if (outward.lengthSq() < 1e-8) outward.set(0, 1, 0);
   outward.normalize();
@@ -64,17 +72,14 @@ export function snapToMeshSurface(
   const raycaster = new THREE.Raycaster();
   const hits: THREE.Intersection[] = [];
 
-  // Cast from outside along inward direction (primary)
   const originOutside = center.clone().add(outward.clone().multiplyScalar(maxDim * 1.5));
   raycaster.set(originOutside, outward.clone().negate());
   hits.push(...raycaster.intersectObjects(meshes, false));
 
-  // Cast from shell point inward (secondary, for concave regions)
   const originShell = shell.clone().add(outward.clone().multiplyScalar(maxDim * 0.25));
   raycaster.set(originShell, outward.clone().negate());
   hits.push(...raycaster.intersectObjects(meshes, false));
 
-  // Cast from center outward (for interior-relative targets)
   raycaster.set(center, outward);
   hits.push(...raycaster.intersectObjects(meshes, false));
 
@@ -82,7 +87,6 @@ export function snapToMeshSurface(
     return shell;
   }
 
-  // Prefer the hit closest to the shell reference point
   hits.sort((a, b) => {
     const da = a.point.distanceToSquared(shell);
     const db = b.point.distanceToSquared(shell);
@@ -105,6 +109,34 @@ export function snapToMeshSurface(
 export function getModelExtent(scene: THREE.Object3D): number {
   const box = new THREE.Box3().setFromObject(scene);
   return Math.max(...box.getSize(new THREE.Vector3()).toArray(), 0.001);
+}
+
+/** Convert a world-space point into normalized 0–1 bbox coordinates. */
+export function worldToRelativePosition(
+  scene: THREE.Object3D,
+  world: THREE.Vector3
+): [number, number, number] {
+  scene.updateMatrixWorld(true);
+  const box = new THREE.Box3().setFromObject(scene);
+  const size = box.getSize(new THREE.Vector3());
+  const clamp = (value: number) => Math.min(1, Math.max(0, value));
+
+  return [
+    size.x > 0 ? clamp((world.x - box.min.x) / size.x) : 0.5,
+    size.y > 0 ? clamp((world.y - box.min.y) / size.y) : 0.5,
+    size.z > 0 ? clamp((world.z - box.min.z) / size.z) : 0.5,
+  ];
+}
+
+/** Raycast onto model meshes and return normalized bbox coordinates. */
+export function pickRelativeOnSurface(
+  scene: THREE.Object3D,
+  raycaster: THREE.Raycaster,
+  meshes: THREE.Mesh[]
+): [number, number, number] | null {
+  const hits = raycaster.intersectObjects(meshes, false);
+  if (!hits.length) return null;
+  return worldToRelativePosition(scene, hits[0].point);
 }
 
 export function resolveHotspotPositions(

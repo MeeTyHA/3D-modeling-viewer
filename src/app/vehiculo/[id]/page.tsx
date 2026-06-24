@@ -7,10 +7,8 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import Header from "@/components/Sidebar/Header";
 import FeatureBar from "@/components/Sidebar/FeatureBar";
 import PanelsOverlay from "@/components/Sidebar/PanelsOverlay";
-import vehiclesData from "@/data/vehicles/vehicles.json";
-import { getHotspots } from "@/data/hotspots";
+import { useCMSHotspots, useCMSVehicles } from "@/hooks/useCMS";
 import { useAppStore } from "@/store/useAppStore";
-import type { Vehicle } from "@/types";
 import { initGLTFLoader, preloadGLB } from "@/hooks/useGLBLoader";
 
 const VehicleViewer = dynamic(
@@ -31,9 +29,9 @@ interface PageProps {
 
 export default function VehiclePage({ params }: PageProps) {
   const { id } = use(params);
-  const vehicles = vehiclesData as Vehicle[];
+  const { vehicles } = useCMSVehicles();
+  const { hotspots: hotspotInputs } = useCMSHotspots(id);
   const vehicle = vehicles.find((v) => v.id === id) ?? vehicles[0];
-  const hotspotInputs = getHotspots(vehicle.id).hotspots;
 
   const panelsOpen = useAppStore((s) => s.panelsOpen);
   const togglePanels = useAppStore((s) => s.togglePanels);
@@ -42,6 +40,7 @@ export default function VehiclePage({ params }: PageProps) {
   const setSelectedProduct = useAppStore((s) => s.setSelectedProduct);
 
   useEffect(() => {
+    if (!vehicle) return;
     initGLTFLoader();
     preloadGLB(vehicle.glbPath);
     return () => {
@@ -49,20 +48,21 @@ export default function VehiclePage({ params }: PageProps) {
       setSelectedHotspot(null);
       setSelectedProduct(null);
     };
-  }, [id, vehicle.glbPath, setPanelsOpen, setSelectedHotspot, setSelectedProduct]);
+  }, [id, vehicle, setPanelsOpen, setSelectedHotspot, setSelectedProduct]);
 
-  const handleRequestQuote = () => {
-    alert(
-      "¡Gracias por tu interés! Un asesor DirectTrack se pondrá en contacto contigo pronto."
+  if (!vehicle) {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-[#f5f7fa]">
+        <div className="h-10 w-10 animate-spin rounded-full border-4 border-[#1e88e5] border-t-transparent" />
+      </div>
     );
-  };
+  }
 
   return (
     <div className="flex min-h-screen flex-col bg-[#f5f7fa]">
       <Header />
 
       <div className="relative flex min-h-0 flex-1 flex-col">
-        {/* Título + visor 3D */}
         <div className="flex min-h-0 flex-1 flex-col">
           <div className="px-4 pt-6 lg:px-8">
             <motion.div
@@ -88,11 +88,10 @@ export default function VehiclePage({ params }: PageProps) {
               hotspotInputs={hotspotInputs}
               interactive={!panelsOpen}
             />
-            <PanelsOverlay onRequestQuote={handleRequestQuote} />
+            <PanelsOverlay vehicleTitle={vehicle.title} />
           </div>
         </div>
 
-        {/* Menú toggle — esquina superior derecha del área de contenido */}
         <button
           type="button"
           onClick={togglePanels}

@@ -1,6 +1,6 @@
 "use client";
 
-import { FaWrench, FaHeadset, FaLaptop, FaShieldAlt } from "react-icons/fa";
+import { FaWrench, FaHeadset, FaLaptop } from "react-icons/fa";
 
 const features = [
   {
@@ -18,17 +18,12 @@ const features = [
     title: "Plataforma avanzada",
     subtitle: "Web y app móvil",
   },
-  {
-    icon: FaShieldAlt,
-    title: "Garantía incluida",
-    subtitle: "Equipos y servicio",
-  },
 ];
 
 export default function FeatureBar() {
   return (
     <div className="border-t border-gray-100 bg-white">
-      <div className="mx-auto grid max-w-[1600px] grid-cols-2 gap-4 px-4 py-4 sm:grid-cols-4 lg:px-8">
+      <div className="mx-auto grid max-w-[1600px] grid-cols-1 gap-4 px-4 py-4 sm:grid-cols-3 lg:px-8">
         {features.map((feature) => {
           const Icon = feature.icon;
           return (

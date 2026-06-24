@@ -71,6 +71,3 @@ public/
 - Next.js 16, TypeScript, Tailwind CSS
 - Three.js, React Three Fiber, Drei
 - Framer Motion, Zustand, React Hook Form, React Icons
-
-
-````

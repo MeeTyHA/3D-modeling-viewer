@@ -6,6 +6,7 @@
     "price": 4500,
     "image": "/assets/images/products/GPS Professional 4G.png",
     "pdf": "/assets/pdf/Equipo_electronico_compacto_tipo_transmisor_receptor.pdf",
+    "video": "/assets/videos/video.mp4",
     "benefits": [
       "Localización en tiempo real 24/7",
       "Historial de recorridos hasta 12 meses",
@@ -33,6 +34,7 @@
     "price": 6800,
     "image": "/assets/images/products/Camara IA DMS.png",
     "pdf": "/assets/pdf/Camara_web_USB.pdf",
+    "video": "/assets/videos/video.mp4",
     "benefits": [
       "Detección de fatiga y somnolencia",
       "Alertas de distracción al volante",
@@ -60,6 +62,7 @@
     "price": 3200,
     "image": "/assets/images/products/Sensor de Combustible.png",
     "pdf": "/assets/pdf/Interruptor_de_nivel_flotador.pdf",
+    "video": "/assets/videos/video.mp4",
     "benefits": [
       "Medición precisa de nivel de combustible",
       "Detección de cargas y descargas",
@@ -87,6 +90,7 @@
     "price": 1800,
     "image": "/assets/images/products/Sensor de Desacople.png",
     "pdf": "/assets/pdf/Sirena_de_alarma.pdf",
+    "video": "/assets/videos/video.mp4",
     "benefits": [
       "Detección instantánea de apertura",
       "Alertas push y SMS",
@@ -114,6 +118,7 @@
     "price": 1200,
     "image": "/assets/images/products/Boton de Panico.png",
     "pdf": "/assets/pdf/Botón_de_pánico.pdf",
+    "video": "/assets/videos/video.mp4",
     "benefits": [
       "Activación SOS con un toque",
       "Notificación inmediata a monitoreo",

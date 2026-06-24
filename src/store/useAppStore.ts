@@ -1,9 +1,5 @@
 import { create } from "zustand";
 import type { Hotspot, Product } from "@/types";
-import productsData from "@/data/products/products.json";
-
-const ALL_PRODUCT_IDS = (productsData as Product[]).map((p) => p.id);
-const DEFAULT_PRODUCT = (productsData as Product[])[0];
 
 interface AppState {
   selectedHotspot: Hotspot | null;
@@ -24,7 +20,7 @@ interface AppState {
   removeFromQuote: (productId: string) => void;
   updateQuantity: (productId: string, quantity: number) => void;
   clearQuote: () => void;
-  initDefaultQuote: () => void;
+  syncQuoteWithProductCatalog: (productIds: string[]) => void;
 }
 
 export const useAppStore = create<AppState>((set, get) => ({
@@ -44,24 +40,33 @@ export const useAppStore = create<AppState>((set, get) => ({
     else set({ panelsOpen: false });
   },
   openPanelsWithCatalog: () => {
-    get().initDefaultQuote();
-    const state = get();
-    if (!state.selectedProduct) {
-      set({ selectedProduct: DEFAULT_PRODUCT });
-    }
     set({ panelsOpen: true });
   },
   setLoadingProgress: (progress) => set({ loadingProgress: progress }),
   setIsModelLoaded: (loaded) => set({ isModelLoaded: loaded }),
 
-  initDefaultQuote: () => {
-    if (get().quoteItems.length > 0) return;
-    set({
-      quoteItems: ALL_PRODUCT_IDS.map((productId) => ({
-        productId,
-        quantity: 1,
-      })),
-    });
+  syncQuoteWithProductCatalog: (productIds) => {
+    if (!productIds.length) return;
+
+    const validIds = new Set(productIds);
+    const items = get().quoteItems;
+
+    if (items.length === 0) {
+      set({
+        quoteItems: productIds.map((productId) => ({ productId, quantity: 1 })),
+      });
+      return;
+    }
+
+    const existingIds = new Set(items.map((item) => item.productId));
+    const kept = items.filter((item) => validIds.has(item.productId));
+    const added = productIds
+      .filter((id) => !existingIds.has(id))
+      .map((productId) => ({ productId, quantity: 1 }));
+
+    if (added.length > 0 || kept.length !== items.length) {
+      set({ quoteItems: [...kept, ...added] });
+    }
   },
 
   addToQuote: (productId) => {
