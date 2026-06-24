@@ -47,6 +47,18 @@ body {
   background: #1e88e5;
 }
 
+/* Lock modal panels to their 75% browser-zoom appearance regardless of page zoom. */
+.modal-zoom-lock {
+  zoom: var(--modal-zoom, 0.75);
+}
+
+@supports not (zoom: 1) {
+  .modal-zoom-lock {
+    transform: scale(var(--modal-zoom, 0.75));
+    transform-origin: top right;
+  }
+}
+
 /* Range input styling */
 input[type="range"] {
   -webkit-appearance: none;

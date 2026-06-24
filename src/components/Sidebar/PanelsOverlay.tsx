@@ -1,12 +1,13 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, type CSSProperties } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import EquipmentCard from "@/components/EquipmentCard/EquipmentCard";
 import QuotePanel from "@/components/QuotePanel/QuotePanel";
 import VideoPlayer from "@/components/VideoPlayer/VideoPlayer";
 import { useAppStore } from "@/store/useAppStore";
 import { useCMSProducts } from "@/hooks/useCMS";
+import { useModalZoomLock } from "@/hooks/useModalZoomLock";
 
 interface PanelsOverlayProps {
   vehicleTitle?: string;
@@ -20,6 +21,7 @@ export default function PanelsOverlay({ vehicleTitle }: PanelsOverlayProps) {
   const addToQuote = useAppStore((s) => s.addToQuote);
   const syncQuoteWithProductCatalog = useAppStore((s) => s.syncQuoteWithProductCatalog);
   const { products } = useCMSProducts();
+  const modalZoom = useModalZoomLock();
 
   useEffect(() => {
     if (!products.length) return;
@@ -43,8 +45,12 @@ export default function PanelsOverlay({ vehicleTitle }: PanelsOverlayProps) {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 48 }}
             transition={{ type: "spring", stiffness: 280, damping: 28 }}
-            className="pointer-events-auto flex h-full w-full max-w-[920px] min-h-0 flex-col gap-3 overflow-hidden lg:flex-row lg:gap-4"
+            className="pointer-events-auto h-full w-full max-w-[920px] min-h-0"
           >
+            <div
+              className="modal-zoom-lock flex h-full min-h-0 flex-col gap-3 overflow-hidden lg:flex-row lg:gap-4"
+              style={{ "--modal-zoom": modalZoom } as CSSProperties}
+            >
             <div className="flex min-h-0 max-h-[58%] flex-col gap-3 overflow-hidden lg:max-h-none lg:flex-1 lg:w-[48%]">
               <div className="min-h-0 flex-1 overflow-hidden">
                 <EquipmentCard
@@ -66,6 +72,7 @@ export default function PanelsOverlay({ vehicleTitle }: PanelsOverlayProps) {
 
             <div className="flex min-h-0 flex-1 flex-col overflow-hidden lg:w-[52%]">
               <QuotePanel vehicleTitle={vehicleTitle} />
+            </div>
             </div>
           </motion.div>
         </motion.div>
