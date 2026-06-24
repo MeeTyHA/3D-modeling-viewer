@@ -27,13 +27,41 @@ function createProductId(name: string, existingIds: string[]) {
   return `${base}-${Date.now()}`;
 }
 
+function isLocalDev() {
+  if (typeof window === "undefined") return false;
+  const host = window.location.hostname;
+  return host === "localhost" || host === "127.0.0.1";
+}
+
 async function uploadFile(file: File, type: "image" | "pdf" | "video") {
+  if (!isLocalDev()) {
+    try {
+      const { upload } = await import("@vercel/blob/client");
+      const prefix = { image: "images/products", pdf: "pdf", video: "videos" }[type];
+      const safeName = file.name.replace(/[^a-zA-Z0-9._\-\s]/g, "_").trim() || "archivo";
+      const pathname = `${prefix}/${Date.now()}-${safeName}`;
+
+      const blob = await upload(pathname, file, {
+        access: "public",
+        handleUploadUrl: "/api/cms/upload",
+        clientPayload: JSON.stringify({ type }),
+      });
+
+      return blob.url;
+    } catch (err) {
+      const message =
+        err instanceof Error ? err.message : "Error al subir el archivo";
+      throw new Error(message);
+    }
+  }
+
   const formData = new FormData();
   formData.append("file", file);
   formData.append("type", type);
 
   const res = await fetch("/api/cms/upload", {
     method: "POST",
+    credentials: "include",
     body: formData,
   });
 
