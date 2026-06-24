@@ -1,0 +1,210 @@
+[
+  {
+    "id": "gps-pro",
+    "name": "GPS Profesional 4G",
+    "description": "Rastreador GPS 4G LTE para flotas comerciales con plataforma web y app móvil. Instalación oculta y segura con batería de respaldo interna.",
+    "price": 3000,
+    "image": "/assets/images/products/GPS Professional 4G.png",
+    "pdf": "/assets/pdf/Equipo_electronico_compacto_tipo_transmisor_receptor.pdf",
+    "benefits": [
+      "Localización en tiempo real 24/7",
+      "Historial de recorridos hasta 12 meses",
+      "Alertas de encendido y apagado",
+      "Geocercas personalizables",
+      "Reportes de velocidad y paradas"
+    ],
+    "technicalSpecs": [
+      {
+        "icon": "signal",
+        "label": "Conexión 4G LTE"
+      },
+      {
+        "icon": "battery",
+        "label": "Batería interna de respaldo"
+      },
+      {
+        "icon": "shield",
+        "label": "Instalación oculta y segura"
+      },
+      {
+        "icon": "platform",
+        "label": "Plataforma web y app móvil"
+      }
+    ],
+    "advantages": [
+      "Cobertura nacional en redes 4G LTE",
+      "Antena GNSS de alta sensibilidad",
+      "Consumo optimizado para flotas",
+      "Soporte técnico 24/7 en México"
+    ],
+    "video": ""
+  },
+  {
+    "id": "camera-dms",
+    "name": "Cámara IA DMS",
+    "description": "Sistema de monitoreo con inteligencia artificial para detección de fatiga, distracción y comportamiento del conductor en tiempo real.",
+    "price": 6800,
+    "image": "/assets/images/products/Camara IA DMS.png",
+    "pdf": "/assets/pdf/Camara_web_USB.pdf",
+    "benefits": [
+      "Detección de fatiga y somnolencia",
+      "Alertas de distracción al volante",
+      "Grabación HD continua",
+      "Análisis con inteligencia artificial",
+      "Integración con plataforma DirectTrack"
+    ],
+    "technicalSpecs": [
+      {
+        "icon": "camera",
+        "label": "Resolución Full HD 1080p"
+      },
+      {
+        "icon": "ai",
+        "label": "IA para análisis conductual"
+      },
+      {
+        "icon": "storage",
+        "label": "Almacenamiento local y nube"
+      },
+      {
+        "icon": "night",
+        "label": "Visión nocturna IR"
+      }
+    ],
+    "advantages": [
+      "Reduce accidentes por fatiga hasta 40%",
+      "Cumple normativas de seguridad vial",
+      "Instalación en cabina sin obstrucción",
+      "Reportes automáticos de eventos críticos"
+    ]
+  },
+  {
+    "id": "fuel-sensor",
+    "name": "Sensor de Combustible",
+    "description": "Sensor ultrasónico de nivel de combustible con precisión del 99% para control de consumo y detección de extracciones no autorizadas.",
+    "price": 3200,
+    "image": "/assets/images/products/Sensor de Combustible.png",
+    "pdf": "/assets/pdf/Interruptor_de_nivel_flotador.pdf",
+    "benefits": [
+      "Medición precisa de nivel de combustible",
+      "Detección de cargas y descargas",
+      "Alertas de consumo anormal",
+      "Reportes de rendimiento por unidad",
+      "Compatible con tanques de hasta 1000L"
+    ],
+    "technicalSpecs": [
+      {
+        "icon": "precision",
+        "label": "Precisión ±1%"
+      },
+      {
+        "icon": "ultrasonic",
+        "label": "Tecnología ultrasónica"
+      },
+      {
+        "icon": "tank",
+        "label": "Instalación en tanque"
+      },
+      {
+        "icon": "report",
+        "label": "Reportes automáticos"
+      }
+    ],
+    "advantages": [
+      "Ahorro de combustible comprobado",
+      "Detección inmediata de robos",
+      "Sin contacto con el combustible",
+      "Calibración remota desde plataforma"
+    ]
+  },
+  {
+    "id": "door-sensor",
+    "name": "Sensor de Desacople",
+    "description": "Sensor magnético de apertura de puertas y compuertas con notificación instantánea para protección de carga y mercancía.",
+    "price": 1800,
+    "image": "/assets/images/products/Sensor de Desacople.png",
+    "pdf": "/assets/pdf/Sirena_de_alarma.pdf",
+    "benefits": [
+      "Detección instantánea de apertura",
+      "Alertas push y SMS",
+      "Registro de eventos con hora y ubicación",
+      "Batería de larga duración",
+      "Instalación sin cableado"
+    ],
+    "technicalSpecs": [
+      {
+        "icon": "magnet",
+        "label": "Sensor magnético"
+      },
+      {
+        "icon": "wireless",
+        "label": "Comunicación inalámbrica"
+      },
+      {
+        "icon": "battery",
+        "label": "Batería 2+ años"
+      },
+      {
+        "icon": "alert",
+        "label": "Alertas en tiempo real"
+      }
+    ],
+    "advantages": [
+      "Protección de carga en tránsito",
+      "Instalación en minutos",
+      "Resistente a condiciones extremas",
+      "Integración con GPS y plataforma"
+    ]
+  },
+  {
+    "id": "panic-button",
+    "name": "Botón de Pánico",
+    "description": "Botón de emergencia SOS con activación silenciosa y notificación inmediata a centro de monitoreo y contactos de emergencia.",
+    "price": 1200,
+    "image": "/assets/images/products/Boton de Panico.png",
+    "pdf": "/assets/pdf/Botón_de_pánico.pdf",
+    "benefits": [
+      "Activación SOS con un toque",
+      "Notificación inmediata a monitoreo",
+      "Ubicación GPS en tiempo real",
+      "Modo silencioso disponible",
+      "Contactos de emergencia configurables"
+    ],
+    "technicalSpecs": [
+      {
+        "icon": "sos",
+        "label": "Botón SOS certificado"
+      },
+      {
+        "icon": "gps",
+        "label": "GPS integrado"
+      },
+      {
+        "icon": "silent",
+        "label": "Modo silencioso"
+      },
+      {
+        "icon": "waterproof",
+        "label": "Resistente al agua IP67"
+      }
+    ],
+    "advantages": [
+      "Respuesta de emergencia en segundos",
+      "Ideal para conductores y personal",
+      "Diseño discreto y ergonómico",
+      "Cumple normativas de seguridad"
+    ]
+  },
+  {
+    "id": "ghdhi",
+    "name": "ghdhi",
+    "description": "dgsgddsvds d dvdsvdsvasdvsdagsadgsdagsdagsdasdaf",
+    "price": 2000,
+    "image": "/assets/images/products/fruehaufcajaseca01.webp",
+    "pdf": "/assets/pdf/cotizacion-directtrack-1782314314591.pdf",
+    "video": "/assets/videos/Recording 2026-06-24 164339.mp4",
+    "benefits": [],
+    "technicalSpecs": [],
+    "advantages": []
+  }
+]

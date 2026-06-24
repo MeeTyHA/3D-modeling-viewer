@@ -1,0 +1,67 @@
+{
+  "hotspots": [
+    {
+      "id": "cabina",
+      "label": "Cabina operador",
+      "description": "GPS resistente a vibraciones montado en cabina. Ideal para monitoreo de operador y horas de trabajo en obra.",
+      "relativePosition": [0.44, 0.58, 0.78],
+      "labelOffset": [78, -40],
+      "productId": "gps-pro",
+      "installationNotes": "Equipo IP67. Montaje en cabina con amortiguación de vibración."
+    },
+    {
+      "id": "cilindro-hidraulico",
+      "label": "Cilindro hidráulico",
+      "description": "Sensor de presión y movimiento en cilindro del brazo para registro de ciclos de trabajo.",
+      "relativePosition": [0.68, 0.72, 0.42],
+      "labelOffset": [-80, -32],
+      "productId": "door-sensor",
+      "installationNotes": "Sensor de presión en línea hidráulica. Reportes de productividad."
+    },
+    {
+      "id": "brazo",
+      "label": "Brazo hidráulico",
+      "description": "Acelerómetro en brazo para detectar movimiento y uso del equipo en tiempo real.",
+      "relativePosition": [0.56, 0.62, 0.58],
+      "labelOffset": [74, -48],
+      "productId": "door-sensor",
+      "installationNotes": "Acelerómetro en brazo principal. Alertas de uso no autorizado."
+    },
+    {
+      "id": "articulacion",
+      "label": "Articulación del brazo",
+      "description": "Punto de monitoreo en articulación principal entre brazo y cuerpo de la excavadora.",
+      "relativePosition": [0.50, 0.50, 0.68],
+      "labelOffset": [-76, 36],
+      "productId": "fuel-sensor",
+      "installationNotes": "Sensor de ángulo en articulación. Mantenimiento predictivo."
+    },
+    {
+      "id": "motor",
+      "label": "Compartimento motor",
+      "description": "Monitoreo de horas de operación, temperatura y consumo de combustible diésel.",
+      "relativePosition": [0.24, 0.46, 0.72],
+      "labelOffset": [70, 42],
+      "productId": "fuel-sensor",
+      "installationNotes": "Sensor en tanque de diésel. Alertas de bajo combustible."
+    },
+    {
+      "id": "orugas",
+      "label": "Orugas",
+      "description": "GPS con geocercas para control de zona de obra y prevención de robo de maquinaria.",
+      "relativePosition": [0.40, 0.10, 0.52],
+      "labelOffset": [0, 56],
+      "productId": "gps-pro",
+      "installationNotes": "GPS oculto en chasis. Geocercas configurables desde plataforma."
+    },
+    {
+      "id": "cucharon",
+      "label": "Cucharón",
+      "description": "Sensor de inclinación y uso en cucharón para control de excavación.",
+      "relativePosition": [0.78, 0.22, 0.35],
+      "labelOffset": [-74, 44],
+      "productId": "camera-dms",
+      "installationNotes": "Sensor de inclinación. Reportes de profundidad de excavación."
+    }
+  ]
+}

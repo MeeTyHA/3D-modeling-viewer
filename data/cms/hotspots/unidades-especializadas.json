@@ -1,0 +1,58 @@
+{
+  "hotspots": [
+    {
+      "id": "parabrisas",
+      "label": "Parabrisas",
+      "description": "GPS y comunicación de emergencia para unidades especializadas.",
+      "relativePosition": [0.12, 0.68, 0.48],
+      "labelOffset": [78, -38],
+      "productId": "gps-pro",
+      "installationNotes": "Equipo certificado para servicios de emergencia."
+    },
+    {
+      "id": "puerta",
+      "label": "Puerta lateral",
+      "description": "Sensor de apertura para acceso de personal y pacientes.",
+      "relativePosition": [0.32, 0.55, 0.32],
+      "labelOffset": [-80, -26],
+      "productId": "door-sensor",
+      "installationNotes": "Sensor en puertas de acceso. Registro con timestamp GPS."
+    },
+    {
+      "id": "motor",
+      "label": "Compartimento motor",
+      "description": "Monitoreo continuo para disponibilidad de la unidad.",
+      "relativePosition": [0.08, 0.42, 0.50],
+      "labelOffset": [72, 42],
+      "productId": "fuel-sensor",
+      "installationNotes": "Alertas de encendido para despacho de emergencias."
+    },
+    {
+      "id": "techo",
+      "label": "Barra de luces",
+      "description": "Antena GPS y comunicación en barra de luces de emergencia.",
+      "relativePosition": [0.40, 0.90, 0.50],
+      "labelOffset": [0, -54],
+      "productId": "panic-button",
+      "installationNotes": "Botón de pánico para personal en servicio."
+    },
+    {
+      "id": "parachoques",
+      "label": "Parachoques delantero",
+      "description": "Cámara frontal para registro de trayectos de emergencia.",
+      "relativePosition": [0.04, 0.26, 0.50],
+      "labelOffset": [66, 44],
+      "productId": "camera-dms",
+      "installationNotes": "Dashcam con grabación automática al encender."
+    },
+    {
+      "id": "compartimento-medico",
+      "label": "Compartimento médico",
+      "description": "Sensor de temperatura para cadena de frío en unidades médicas.",
+      "relativePosition": [0.55, 0.58, 0.35],
+      "labelOffset": [-74, 34],
+      "productId": "door-sensor",
+      "installationNotes": "Sensor inalámbrico en compartimento. Alertas de apertura."
+    }
+  ]
+}

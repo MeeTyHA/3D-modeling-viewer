@@ -1,0 +1,67 @@
+{
+  "hotspots": [
+    {
+      "id": "parabrisas",
+      "label": "Parabrisas",
+      "description": "GPS compacto y cámara DMS para vehículos ligeros y flotillas corporativas.",
+      "relativePosition": [0.48, 0.62, 0.42],
+      "labelOffset": [76, -38],
+      "productId": "gps-pro",
+      "installationNotes": "Instalación bajo tablero. Compatible con 12V estándar."
+    },
+    {
+      "id": "capo",
+      "label": "Cofre / Motor",
+      "description": "Conexión al sistema OBD-II para datos del motor en tiempo real.",
+      "relativePosition": [0.52, 0.42, 0.18],
+      "labelOffset": [70, 44],
+      "productId": "fuel-sensor",
+      "installationNotes": "Lector OBD-II plug-and-play. Sin modificación del vehículo."
+    },
+    {
+      "id": "puerta",
+      "label": "Puerta del conductor",
+      "description": "Sensor de apertura para alertas de seguridad.",
+      "relativePosition": [0.38, 0.48, 0.58],
+      "labelOffset": [-80, -26],
+      "productId": "door-sensor",
+      "installationNotes": "Sensor magnético en puerta del conductor."
+    },
+    {
+      "id": "parachoques",
+      "label": "Parachoques delantero",
+      "description": "Cámara frontal para registro de incidentes.",
+      "relativePosition": [0.50, 0.22, 0.12],
+      "labelOffset": [64, 46],
+      "productId": "camera-dms",
+      "installationNotes": "Dashcam con grabación en bucle y detección de impacto."
+    },
+    {
+      "id": "rueda-delantera",
+      "label": "Rueda delantera",
+      "description": "Sensor TPMS para monitoreo de presión y temperatura de neumáticos.",
+      "relativePosition": [0.32, 0.14, 0.48],
+      "labelOffset": [-72, 42],
+      "productId": "gps-pro",
+      "installationNotes": "Sensor en válvula. Alertas de presión baja."
+    },
+    {
+      "id": "techo",
+      "label": "Techo",
+      "description": "Antena GPS de alta ganancia para cobertura en zonas urbanas.",
+      "relativePosition": [0.50, 0.88, 0.50],
+      "labelOffset": [0, -52],
+      "productId": "gps-pro",
+      "installationNotes": "Antena adhesiva o magnética en techo."
+    },
+    {
+      "id": "tanque",
+      "label": "Tanque de combustible",
+      "description": "Sensor de nivel para control de consumo.",
+      "relativePosition": [0.42, 0.28, 0.72],
+      "labelOffset": [82, 36],
+      "productId": "fuel-sensor",
+      "installationNotes": "Sensor ultrasónico no invasivo en tanque."
+    }
+  ]
+}

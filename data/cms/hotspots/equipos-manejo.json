@@ -1,0 +1,58 @@
+{
+  "hotspots": [
+    {
+      "id": "cabina",
+      "label": "Cabina",
+      "description": "GPS para montacargas y equipos de almacén con geocercas indoor.",
+      "relativePosition": [0.55, 0.70, 0.50],
+      "labelOffset": [76, -40],
+      "productId": "gps-pro",
+      "installationNotes": "Instalación en cabina del operador. Batería de respaldo incluida."
+    },
+    {
+      "id": "horquillas",
+      "label": "Horquillas",
+      "description": "Sensor de impacto y detección de carga en horquillas.",
+      "relativePosition": [0.15, 0.25, 0.50],
+      "labelOffset": [70, 48],
+      "productId": "door-sensor",
+      "installationNotes": "Sensor de peso en horquillas. Alertas de sobrecarga."
+    },
+    {
+      "id": "motor",
+      "label": "Motor",
+      "description": "Monitoreo de horas de operación y mantenimiento preventivo.",
+      "relativePosition": [0.70, 0.45, 0.50],
+      "labelOffset": [-78, 32],
+      "productId": "fuel-sensor",
+      "installationNotes": "Sensor de combustible para montacargas a gas o diésel."
+    },
+    {
+      "id": "contrapeso",
+      "label": "Contrapeso",
+      "description": "Ubicación alternativa para GPS con antena externa.",
+      "relativePosition": [0.88, 0.40, 0.50],
+      "labelOffset": [-72, -28],
+      "productId": "gps-pro",
+      "installationNotes": "Montaje en contrapeso trasero. Protección contra impactos."
+    },
+    {
+      "id": "ruedas",
+      "label": "Ruedas",
+      "description": "Monitoreo de velocidad y desplazamiento en almacén.",
+      "relativePosition": [0.50, 0.14, 0.50],
+      "labelOffset": [0, 54],
+      "productId": "door-sensor",
+      "installationNotes": "Sensor de movimiento en eje. Reportes de productividad."
+    },
+    {
+      "id": "mastil",
+      "label": "Mástil",
+      "description": "Sensor de elevación para control de altura de carga.",
+      "relativePosition": [0.40, 0.82, 0.50],
+      "labelOffset": [68, -48],
+      "productId": "fuel-sensor",
+      "installationNotes": "Encoder en mástil. Alertas de sobrecarga en altura."
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "hotspots": [
+    {
+      "id": "parabrisas",
+      "label": "Parabrisas",
+      "description": "GPS principal y cámara de monitoreo del conductor para flotas de pasajeros.",
+      "relativePosition": [0.10, 0.70, 0.48],
+      "labelOffset": [78, -40],
+      "productId": "gps-pro",
+      "installationNotes": "Instalación discreta en tablero. Conexión a sistema eléctrico del autobús."
+    },
+    {
+      "id": "puerta-principal",
+      "label": "Puerta principal",
+      "description": "Sensor de apertura para control de acceso de pasajeros.",
+      "relativePosition": [0.22, 0.52, 0.32],
+      "labelOffset": [-82, -24],
+      "productId": "door-sensor",
+      "installationNotes": "Sensor en cada puerta de acceso. Registro de aperturas con GPS."
+    },
+    {
+      "id": "motor",
+      "label": "Compartimento motor",
+      "description": "Monitoreo de temperatura y rendimiento del motor diésel.",
+      "relativePosition": [0.08, 0.42, 0.50],
+      "labelOffset": [72, 42],
+      "productId": "fuel-sensor",
+      "installationNotes": "Sensor de combustible en tanque principal del autobús."
+    },
+    {
+      "id": "pasillo",
+      "label": "Pasillo central",
+      "description": "Cámara de vigilancia interior para seguridad de pasajeros.",
+      "relativePosition": [0.50, 0.82, 0.50],
+      "labelOffset": [0, -55],
+      "productId": "camera-dms",
+      "installationNotes": "Cámara cenital con visión nocturna. Grabación continua HD."
+    },
+    {
+      "id": "techo",
+      "label": "Techo / Antena",
+      "description": "Antena GPS en techo para máxima recepción satelital en rutas urbanas.",
+      "relativePosition": [0.35, 0.92, 0.50],
+      "labelOffset": [68, -48],
+      "productId": "gps-pro",
+      "installationNotes": "Antena externa en techo. Protección contra vibración y clima."
+    },
+    {
+      "id": "llantas-traseras",
+      "label": "Llantas traseras",
+      "description": "Monitoreo de presión y temperatura de neumáticos traseros.",
+      "relativePosition": [0.82, 0.18, 0.50],
+      "labelOffset": [-70, 38],
+      "productId": "gps-pro",
+      "installationNotes": "Sensores TPMS en válvulas. Integración con plataforma de flotas."
+    }
+  ]
+}

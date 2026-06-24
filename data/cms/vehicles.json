@@ -1,0 +1,101 @@
+[
+  {
+    "id": "transporte-carga",
+    "title": "TRACTO CAMIÓN",
+    "subtitle": "Selecciona un punto para visualizar las soluciones que tenemos para tu unidad",
+    "description": "Explora el tractocamión en 360° y descubre los puntos estratégicos de instalación de equipos GPS y telemática. Cada punto indica la ubicación óptima para maximizar la cobertura y seguridad.",
+    "glbPath": "/assets/glb/transporte-de-carga.glb",
+    "cameraPosition": [8, 4, 8],
+    "modelScale": 1,
+    "modelRotation": [0, 0, 0],
+    "hotspotsFile": "transporte-carga"
+  },
+  {
+    "id": "transporte-pasajeros",
+    "title": "TRANSPORTE DE PASAJEROS",
+    "subtitle": "Selecciona un punto para visualizar las soluciones que tenemos para tu unidad",
+    "description": "Explora el autobús en 360° y descubre los puntos estratégicos de instalación de equipos de rastreo y monitoreo para flotas de pasajeros.",
+    "glbPath": "/assets/glb/transporte-de-pasajeros.glb",
+    "cameraPosition": [8, 4, 8],
+    "modelScale": 1,
+    "modelRotation": [0, 0, 0],
+    "hotspotsFile": "transporte-pasajeros"
+  },
+  {
+    "id": "vehiculos-ligeros",
+    "title": "VEHÍCULOS LIGEROS",
+    "subtitle": "Selecciona un punto para visualizar las soluciones que tenemos para tu unidad",
+    "description": "Explora el vehículo en 360° y descubre los puntos óptimos para instalación de GPS y equipos de telemática en automóviles y SUVs.",
+    "glbPath": "/assets/glb/vehiculos-ligeros.glb",
+    "cameraPosition": [6, 3, 6],
+    "modelScale": 1,
+    "modelRotation": [0, 0, 0],
+    "hotspotsFile": "vehiculos-ligeros"
+  },
+  {
+    "id": "maquinaria-pesada",
+    "title": "MAQUINARIA PESADA",
+    "subtitle": "Selecciona un punto para visualizar las soluciones que tenemos para tu unidad",
+    "description": "Explora la maquinaria en 360° y descubre los puntos de instalación para rastreo y monitoreo de equipos pesados en obra y construcción.",
+    "glbPath": "/assets/glb/maquinaria-pesada.glb",
+    "cameraPosition": [8, 5, 8],
+    "modelScale": 1,
+    "modelRotation": [0, 0, 0],
+    "hotspotsFile": "maquinaria-pesada"
+  },
+  {
+    "id": "equipos-manejo",
+    "title": "EQUIPOS DE MANEJO",
+    "subtitle": "Selecciona un punto para visualizar las soluciones que tenemos para tu unidad",
+    "description": "Explora el montacargas en 360° y descubre los puntos estratégicos para instalación de GPS y sensores en equipos de almacén.",
+    "glbPath": "/assets/glb/equipos-manejo-materiales.glb",
+    "cameraPosition": [6, 3, 6],
+    "modelScale": 1,
+    "modelRotation": [0, 0, 0],
+    "hotspotsFile": "equipos-manejo"
+  },
+  {
+    "id": "motocicletas",
+    "title": "MOTOCICLETAS",
+    "subtitle": "Selecciona un punto para visualizar las soluciones que tenemos para tu unidad",
+    "description": "Explora la motocicleta en 360° y descubre los puntos de instalación para rastreo GPS compacto y dispositivos de seguridad.",
+    "glbPath": "/assets/glb/motocicletas.glb",
+    "cameraPosition": [4, 2, 4],
+    "modelScale": 1,
+    "modelRotation": [0, 0, 0],
+    "hotspotsFile": "motocicletas"
+  },
+  {
+    "id": "unidades-especializadas",
+    "title": "UNIDADES ESPECIALIZADAS",
+    "subtitle": "Selecciona un punto para visualizar las soluciones que tenemos para tu unidad",
+    "description": "Explora la unidad especializada en 360° y descubre los puntos de instalación para equipos de rastreo y comunicación de emergencia.",
+    "glbPath": "/assets/glb/unidades-especializadas.glb",
+    "cameraPosition": [7, 4, 7],
+    "modelScale": 1,
+    "modelRotation": [0, 0, 0],
+    "hotspotsFile": "unidades-especializadas"
+  },
+  {
+    "id": "activos-sin-motor",
+    "title": "ACTIVOS SIN MOTOR",
+    "subtitle": "Selecciona un punto para visualizar las soluciones que tenemos para tu unidad",
+    "description": "Explora el activo en 360° y descubre los puntos de instalación para rastreo de remolques, contenedores y activos sin motor propio.",
+    "glbPath": "/assets/glb/activos-sin-motor.glb",
+    "cameraPosition": [7, 3, 7],
+    "modelScale": 1,
+    "modelRotation": [0, 0, 0],
+    "hotspotsFile": "activos-sin-motor"
+  },
+  {
+    "id": "soluciones-especiales",
+    "title": "SOLUCIONES ESPECIALES",
+    "subtitle": "Selecciona un punto para visualizar las soluciones que tenemos para tu unidad",
+    "description": "Explora las soluciones especiales en 360° para rastreo de personas, mascotas y mercancía de alto valor con dispositivos portátiles.",
+    "glbPath": "/assets/glb/person.glb",
+    "cameraPosition": [3, 2, 3],
+    "modelScale": 1,
+    "modelRotation": [0, 0, 0],
+    "hotspotsFile": "soluciones-especiales"
+  }
+]

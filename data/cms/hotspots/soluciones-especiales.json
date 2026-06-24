@@ -1,0 +1,58 @@
+{
+  "hotspots": [
+    {
+      "id": "pecho",
+      "label": "Pecho",
+      "description": "GPS personal portátil en chaleco o pechera. Ideal para personal de campo, seguridad y trabajadores en altura.",
+      "relativePosition": [0.50, 0.62, 0.55],
+      "labelOffset": [76, -38],
+      "productId": "gps-pro",
+      "installationNotes": "Dispositivo compacto con clip en chaleco. Batería de 7 días. Carga USB-C."
+    },
+    {
+      "id": "muneca",
+      "label": "Muñeca",
+      "description": "Botón de pánico SOS en pulsera o reloj para emergencias personales con activación inmediata.",
+      "relativePosition": [0.68, 0.48, 0.52],
+      "labelOffset": [-78, -28],
+      "productId": "panic-button",
+      "installationNotes": "Pulsera SOS resistente al agua IP67. Notificación a contactos de emergencia."
+    },
+    {
+      "id": "cintura",
+      "label": "Cintura",
+      "description": "Cinturón con GPS integrado para rastreo discreto de personal en zonas de riesgo.",
+      "relativePosition": [0.50, 0.44, 0.58],
+      "labelOffset": [72, 40],
+      "productId": "gps-pro",
+      "installationNotes": "Cinturón ergonómico con GPS oculto. Ideal para guardias y personal de seguridad."
+    },
+    {
+      "id": "tobillo",
+      "label": "Tobillo",
+      "description": "Tobillera GPS para monitoreo de personas en movilidad reducida o programas de reintegración.",
+      "relativePosition": [0.54, 0.14, 0.52],
+      "labelOffset": [68, 48],
+      "productId": "gps-pro",
+      "installationNotes": "Tobillera ajustable con GPS y geocercas. Alertas de salida de zona."
+    },
+    {
+      "id": "mochila",
+      "label": "Mochila",
+      "description": "Rastreo de mercancía de alto valor o equipo portátil en mochila o bolsa de transporte.",
+      "relativePosition": [0.48, 0.72, 0.38],
+      "labelOffset": [-74, -34],
+      "productId": "door-sensor",
+      "installationNotes": "Sensor de apertura en compartimento. Alerta al manipular contenido."
+    },
+    {
+      "id": "hombro",
+      "label": "Hombro",
+      "description": "Arnés con GPS para personal en exteriores, ciclistas y trabajadores forestales.",
+      "relativePosition": [0.38, 0.78, 0.48],
+      "labelOffset": [70, -46],
+      "productId": "panic-button",
+      "installationNotes": "Arnés reflectante con botón SOS integrado. Visibilidad y seguridad."
+    }
+  ]
+}

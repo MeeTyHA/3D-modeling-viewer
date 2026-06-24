@@ -1,0 +1,58 @@
+{
+  "hotspots": [
+    {
+      "id": "manillar",
+      "label": "Manillar",
+      "description": "GPS compacto y botón de pánico integrado para motocicletas.",
+      "relativePosition": [0.50, 0.72, 0.42],
+      "labelOffset": [74, -38],
+      "productId": "gps-pro",
+      "installationNotes": "Dispositivo compacto bajo asiento. Alimentación de batería 12V."
+    },
+    {
+      "id": "motor",
+      "label": "Motor",
+      "description": "Conexión al sistema eléctrico de la motocicleta.",
+      "relativePosition": [0.50, 0.42, 0.50],
+      "labelOffset": [0, 52],
+      "productId": "fuel-sensor",
+      "installationNotes": "Cableado protegido contra vibración y humedad."
+    },
+    {
+      "id": "caja",
+      "label": "Caja de reparto",
+      "description": "Sensor de apertura para cajas de entrega y maletero.",
+      "relativePosition": [0.50, 0.45, 0.75],
+      "labelOffset": [-76, 30],
+      "productId": "door-sensor",
+      "installationNotes": "Sensor en compartimento de carga. Alerta al abrir."
+    },
+    {
+      "id": "escape",
+      "label": "Escape",
+      "description": "Botón de pánico accesible para el conductor.",
+      "relativePosition": [0.50, 0.30, 0.82],
+      "labelOffset": [70, 44],
+      "productId": "panic-button",
+      "installationNotes": "Montaje discreto en manillar o chasis."
+    },
+    {
+      "id": "rueda-delantera",
+      "label": "Rueda delantera",
+      "description": "Sensor de velocidad y movimiento para rastreo en tiempo real.",
+      "relativePosition": [0.50, 0.16, 0.22],
+      "labelOffset": [68, 46],
+      "productId": "gps-pro",
+      "installationNotes": "Sensor magnético en eje delantero. Sin modificar frenos."
+    },
+    {
+      "id": "asiento",
+      "label": "Asiento",
+      "description": "Instalación oculta de GPS bajo asiento del conductor.",
+      "relativePosition": [0.50, 0.55, 0.55],
+      "labelOffset": [-72, -32],
+      "productId": "gps-pro",
+      "installationNotes": "Equipo compacto IP67. Conexión directa a batería."
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "hotspots": [
+    {
+      "id": "chasis",
+      "label": "Chasis",
+      "description": "GPS autónomo con batería para remolques sin alimentación propia.",
+      "relativePosition": [0.50, 0.35, 0.50],
+      "labelOffset": [0, 54],
+      "productId": "gps-pro",
+      "installationNotes": "GPS con batería de 30 días. Instalación magnética o atornillada."
+    },
+    {
+      "id": "puerta",
+      "label": "Puerta / Compuerta",
+      "description": "Sensor de apertura para protección de carga en tránsito.",
+      "relativePosition": [0.50, 0.60, 0.30],
+      "labelOffset": [-78, -28],
+      "productId": "door-sensor",
+      "installationNotes": "Sensor en cada puerta de carga. Alerta inmediata."
+    },
+    {
+      "id": "enganche",
+      "label": "Enganche",
+      "description": "Sensor de desacople para detectar separación del tracto.",
+      "relativePosition": [0.08, 0.40, 0.50],
+      "labelOffset": [72, 40],
+      "productId": "door-sensor",
+      "installationNotes": "Instalar en zona de enganche. Notificación al desacoplar."
+    },
+    {
+      "id": "llantas",
+      "label": "Llantas",
+      "description": "Monitoreo de presión para prevención de reventones.",
+      "relativePosition": [0.70, 0.18, 0.50],
+      "labelOffset": [-70, 38],
+      "productId": "gps-pro",
+      "installationNotes": "Sensores TPMS en eje del remolque."
+    },
+    {
+      "id": "luces-traseras",
+      "label": "Luces traseras",
+      "description": "Cámara trasera y sensor de reversa para maniobras seguras.",
+      "relativePosition": [0.92, 0.32, 0.50],
+      "labelOffset": [-76, -30],
+      "productId": "camera-dms",
+      "installationNotes": "Cámara IP67 en parte trasera. Visión nocturna IR."
+    },
+    {
+      "id": "pared-lateral",
+      "label": "Pared lateral",
+      "description": "Sensor de impacto y apertura en pared lateral del remolque.",
+      "relativePosition": [0.50, 0.55, 0.65],
+      "labelOffset": [80, 32],
+      "productId": "door-sensor",
+      "installationNotes": "Sensor magnético en compuerta lateral."
+    }
+  ]
+}
