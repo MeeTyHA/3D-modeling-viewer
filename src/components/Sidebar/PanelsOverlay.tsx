@@ -1,6 +1,10 @@
 "use client";
 
+<<<<<<< HEAD
 import { useEffect, useState, type CSSProperties } from "react";
+=======
+import { useEffect, useState } from "react";
+>>>>>>> parent of 5abf3d3 (get add)
 import { motion, AnimatePresence } from "framer-motion";
 import EquipmentCard from "@/components/EquipmentCard/EquipmentCard";
 import QuotePanel from "@/components/QuotePanel/QuotePanel";
@@ -16,6 +20,7 @@ interface PanelsOverlayProps {
 
 type MobilePanel = "equipment" | "quote";
 
+<<<<<<< HEAD
 function useIsMobile() {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -30,18 +35,27 @@ function useIsMobile() {
   return isMobile;
 }
 
+=======
+>>>>>>> parent of 5abf3d3 (get add)
 export default function PanelsOverlay({ vehicleTitle }: PanelsOverlayProps) {
   const panelsOpen = useAppStore((s) => s.panelsOpen);
   const selectedProduct = useAppStore((s) => s.selectedProduct);
   const selectedHotspot = useAppStore((s) => s.selectedHotspot);
+  const quoteItems = useAppStore((s) => s.quoteItems);
   const setPanelsOpen = useAppStore((s) => s.setPanelsOpen);
   const addToQuote = useAppStore((s) => s.addToQuote);
   const syncQuoteWithProductCatalog = useAppStore((s) => s.syncQuoteWithProductCatalog);
   const { products } = useCMSProducts();
+<<<<<<< HEAD
   const modalZoom = useModalZoomLock();
   const isMobile = useIsMobile();
   const [mobilePanel, setMobilePanel] = useState<MobilePanel>("equipment");
   const { total, itemCount } = useQuoteTotals();
+=======
+  const [mobilePanel, setMobilePanel] = useState<MobilePanel>("equipment");
+
+  const quoteCount = quoteItems.reduce((sum, item) => sum + item.quantity, 0);
+>>>>>>> parent of 5abf3d3 (get add)
 
   useEffect(() => {
     if (!products.length) return;
@@ -54,6 +68,7 @@ export default function PanelsOverlay({ vehicleTitle }: PanelsOverlayProps) {
     if (panelsOpen) setMobilePanel("equipment");
   }, [panelsOpen, product?.id]);
 
+<<<<<<< HEAD
   useEffect(() => {
     if (!panelsOpen || !isMobile) return;
     const previous = document.body.style.overflow;
@@ -210,6 +225,91 @@ export default function PanelsOverlay({ vehicleTitle }: PanelsOverlayProps) {
                 </div>
               </div>
             </motion.div>
+=======
+  return (
+    <AnimatePresence>
+      {panelsOpen && product && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="pointer-events-none absolute inset-0 z-30 flex items-stretch justify-end p-2 pt-4 sm:p-4 lg:items-start lg:p-6"
+          aria-hidden={!panelsOpen}
+        >
+          <motion.div
+            initial={{ opacity: 0, x: 48 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 48 }}
+            transition={{ type: "spring", stiffness: 280, damping: 28 }}
+            className="pointer-events-auto flex h-full min-h-0 w-full max-w-[920px] flex-col gap-3 overflow-hidden lg:max-h-[calc(100vh-10rem)] lg:flex-row lg:gap-4"
+          >
+            <div className="flex shrink-0 gap-2 rounded-xl border border-gray-200 bg-white p-1 shadow-sm lg:hidden">
+              <button
+                type="button"
+                onClick={() => setMobilePanel("equipment")}
+                className={`flex-1 rounded-lg px-3 py-2 text-xs font-semibold uppercase tracking-wide transition ${
+                  mobilePanel === "equipment"
+                    ? "bg-[#1e88e5] text-white"
+                    : "text-[#1a3a5c] hover:bg-gray-50"
+                }`}
+              >
+                Equipo
+              </button>
+              <button
+                type="button"
+                onClick={() => setMobilePanel("quote")}
+                className={`flex flex-1 items-center justify-center gap-2 rounded-lg px-3 py-2 text-xs font-semibold uppercase tracking-wide transition ${
+                  mobilePanel === "quote"
+                    ? "bg-[#1e88e5] text-white"
+                    : "text-[#1a3a5c] hover:bg-gray-50"
+                }`}
+              >
+                Tu cotización
+                {quoteCount > 0 && (
+                  <span
+                    className={`flex h-5 min-w-5 items-center justify-center rounded-full px-1 text-[10px] font-bold ${
+                      mobilePanel === "quote"
+                        ? "bg-white text-[#1e88e5]"
+                        : "bg-[#1e88e5] text-white"
+                    }`}
+                  >
+                    {quoteCount}
+                  </span>
+                )}
+              </button>
+            </div>
+
+            <div
+              className={`min-h-0 flex-1 flex-col gap-3 overflow-hidden lg:flex lg:w-[48%] ${
+                mobilePanel === "equipment" ? "flex" : "hidden"
+              }`}
+            >
+              <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain">
+                <EquipmentCard
+                  key={product.id}
+                  product={product}
+                  hotspotLabel={selectedHotspot?.label ?? "Cabina"}
+                  onAddToQuote={() => addToQuote(product.id)}
+                  onClose={() => setPanelsOpen(false)}
+                />
+              </div>
+              <div className="shrink-0">
+                <VideoPlayer
+                  key={product.video || product.id}
+                  src={product.video || "/assets/videos/video.mp4"}
+                  title="¿CÓMO FUNCIONA DIRECTRACK GPS PRO?"
+                />
+              </div>
+            </div>
+
+            <div
+              className={`min-h-0 flex-1 flex-col overflow-hidden lg:flex lg:w-[52%] ${
+                mobilePanel === "quote" ? "flex" : "hidden"
+              }`}
+            >
+              <QuotePanel vehicleTitle={vehicleTitle} />
+            </div>
+>>>>>>> parent of 5abf3d3 (get add)
           </motion.div>
         </>
       )}

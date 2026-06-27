@@ -4,7 +4,6 @@ import dynamic from "next/dynamic";
 import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import ProductAddModal from "@/components/Admin/ProductAddModal";
-import ProductContentEditor from "@/components/Admin/ProductContentEditor";
 import { invalidateCmsCache } from "@/hooks/useCMS";
 import type { Product, QuoteConfig, Vehicle } from "@/types";
 import type { HotspotInputData } from "@/types";
@@ -250,34 +249,11 @@ export default function AdminDashboard({ onLogout }: AdminDashboardProps) {
                   rows={3}
                   className="mt-1 w-full rounded-xl border border-gray-200 px-3 py-2 text-sm"
                 />
-                <ProductContentEditor
-                  content={{
-                    benefits: product.benefits,
-                    technicalSpecs: product.technicalSpecs,
-                    advantages: product.advantages,
-                  }}
-                  onChange={(content) => {
-                    const next = [...products];
-                    next[idx] = { ...product, ...content };
-                    setProducts(next);
-                  }}
-                />
               </div>
             ))}
             <button
               type="button"
-              onClick={() => {
-                const sanitized = products.map((product) => ({
-                  ...product,
-                  benefits: product.benefits.map((item) => item.trim()).filter(Boolean),
-                  advantages: product.advantages.map((item) => item.trim()).filter(Boolean),
-                  technicalSpecs: product.technicalSpecs
-                    .map((spec) => ({ ...spec, label: spec.label.trim() }))
-                    .filter((spec) => spec.label),
-                }));
-                setProducts(sanitized);
-                void save("/api/cms/products", sanitized, "Equipos");
-              }}
+              onClick={() => save("/api/cms/products", products, "Equipos")}
               className="rounded-xl bg-[#1e88e5] px-6 py-2.5 text-sm font-semibold text-white hover:bg-[#1565c0]"
             >
               Guardar equipos

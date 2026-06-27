@@ -25,6 +25,6 @@ export async function PUT(request: Request) {
     if (error instanceof Error && error.message === "UNAUTHORIZED") {
       return NextResponse.json({ error: "No autorizado" }, { status: 401 });
     }
-    return NextResponse.json({ error: "Error al guardar productos", detail: error }, { status: 500 });
+    return NextResponse.json({ error: "Error al guardar productos" }, { status: 500 });
   }
 }

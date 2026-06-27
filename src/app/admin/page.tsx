@@ -15,7 +15,6 @@ export default function AdminPage() {
   }, []);
 
   if (authenticated === null) {
-    console.log("version 1.1")
     return (
       <div className="flex min-h-screen items-center justify-center bg-[#f5f7fa]">
         <div className="h-10 w-10 animate-spin rounded-full border-4 border-[#1e88e5] border-t-transparent" />
